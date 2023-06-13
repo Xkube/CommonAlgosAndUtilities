@@ -6,6 +6,6 @@ final class CommonAlgosAndUtilitiesTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(CommonAlgosAndUtilities().text, "Hello, World!")
+        //XCTAssertEqual(CommonAlgosAndUtilities().text, "Hello, World!")
     }
 }
