@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct AnyNumber {
+public struct AnyNumber {
   let someNumber: Any
   let hasDecimal: Bool
   
@@ -15,20 +15,20 @@ struct AnyNumber {
     self.hasDecimal = hasDecimal
   }
   
-  init(_ number:Int, hasDecimal: Bool = false) {
+  public init(_ number:Int, hasDecimal: Bool = false) {
     self.init(someNumber: number, hasDecimal: hasDecimal)
   }
   
-  init(_ number:Float, hasDecimal: Bool = false) {
+  public init(_ number:Float, hasDecimal: Bool = false) {
     self.init(someNumber: number, hasDecimal: hasDecimal)
   }
   
-  init(_ number:Double, hasDecimal: Bool = false) {
+  public init(_ number:Double, hasDecimal: Bool = false) {
     self.init(someNumber: number, hasDecimal: hasDecimal)
   }
 
   
-  var stringValue: String {
+  public var stringValue: String {
     
     let optionalValueString = displayValue(someNumber: someNumber, showDecimalPlace: hasDecimal)
     var valueString = ""
@@ -60,7 +60,7 @@ struct AnyNumber {
   
   }
   
-  func displayValue(someNumber: Any, showDecimalPlace: Bool) -> String? {
+  public func displayValue(someNumber: Any, showDecimalPlace: Bool) -> String? {
     var stringValue: String?
     // make sure that some number is a type of number
     if type(of: someNumber) == Int.self || type(of: someNumber) == Double.self || type(of: someNumber) == Float.self {
@@ -73,7 +73,6 @@ struct AnyNumber {
         stringValue = showDecimalPlace == false ? "\(Int(someNumber as! Float))" : "\(Float(someNumber as! Float))"
       }
     }
-    
     return stringValue
   }
 }
